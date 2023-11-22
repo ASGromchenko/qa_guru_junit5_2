@@ -1,8 +1,8 @@
 package data;
 
 public enum LanguageOfProgramming {
-    JAVA("Java-разработчик"),
-    PHP("PHP-разработчик с нуля до PRO");
+    JAVA("Java-СЂР°Р·СЂР°Р±РѕС‚С‡РёРє"),
+    PHP("PHP-СЂР°Р·СЂР°Р±РѕС‚С‡РёРє СЃ РЅСѓР»СЏ РґРѕ PRO");
     public final String description;
 
     LanguageOfProgramming(String description) {

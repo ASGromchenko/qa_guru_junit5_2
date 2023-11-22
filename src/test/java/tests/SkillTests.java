@@ -22,9 +22,9 @@ public class SkillTests extends TestBase {
             "TeamLead", "Developer"
     })
 
-    @ParameterizedTest(name = "Поисковый запрос {0} должен отдавать не пустой список результатов")
+    @ParameterizedTest(name = "РџРѕРёСЃРєРѕРІС‹Р№ Р·Р°РїСЂРѕСЃ {0} РґРѕР»Р¶РµРЅ РѕС‚РґР°РІР°С‚СЊ РЅРµ РїСѓСЃС‚РѕР№ СЃРїРёСЃРѕРє СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ")
     @Tags({@Tag("WEB"), @Tag("SMOKE")})
-    @DisplayName("Проверка отправки запроса по профессиям и выдача непустого рещультата")
+    @DisplayName("РџСЂРѕРІРµСЂРєР° РѕС‚РїСЂР°РІРєРё Р·Р°РїСЂРѕСЃР° РїРѕ РїСЂРѕС„РµСЃСЃРёСЏРј Рё РІС‹РґР°С‡Р° РЅРµРїСѓСЃС‚РѕРіРѕ СЂРµС‰СѓР»СЊС‚Р°С‚Р°")
     void searchProfessionQueryShouldNotHasEmptyResultTest(String query) {
         $("[name=search]").setValue(query).pressEnter();
         $$(".card-list").shouldBe(sizeGreaterThan(0));
@@ -35,9 +35,9 @@ public class SkillTests extends TestBase {
             "Data science, Data Analyst"
     })
 
-    @ParameterizedTest(name = "Для поискового запроса {0} должно быть корректное наименование {1}")
+    @ParameterizedTest(name = "Р”Р»СЏ РїРѕРёСЃРєРѕРІРѕРіРѕ Р·Р°РїСЂРѕСЃР° {0} РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РєРѕСЂСЂРµРєС‚РЅРѕРµ РЅР°РёРјРµРЅРѕРІР°РЅРёРµ {1}")
     @Tag("REST")
-    @DisplayName("Проверка наличия в карточке корректного адреса курса")
+    @DisplayName("РџСЂРѕРІРµСЂРєР° РЅР°Р»РёС‡РёСЏ РІ РєР°СЂС‚РѕС‡РєРµ РєРѕСЂСЂРµРєС‚РЅРѕРіРѕ Р°РґСЂРµСЃР° РєСѓСЂСЃР°")
     void searchResultsShouldContainExpectedUrlTest(String query, String expectedUrl) {
         $("[name=search]").setValue(query).pressEnter();
         $(".courses-block").shouldHave(Condition.text(expectedUrl));
@@ -45,7 +45,7 @@ public class SkillTests extends TestBase {
 
     @Tag("REGRESS")
     @EnumSource(LanguageOfProgramming.class)
-    @ParameterizedTest(name = "Проверка корректности отображения наименования курса")
+    @ParameterizedTest(name = "РџСЂРѕРІРµСЂРєР° РєРѕСЂСЂРµРєС‚РЅРѕСЃС‚Рё РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РЅР°РёРјРµРЅРѕРІР°РЅРёСЏ РєСѓСЂСЃР°")
 
     void correctNameOfTheCourseTest(LanguageOfProgramming language) {
         $("[name=search]").setValue(language.name()).pressEnter();
