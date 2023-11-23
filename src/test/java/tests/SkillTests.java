@@ -24,7 +24,7 @@ public class SkillTests extends TestBase {
 
     @ParameterizedTest(name = "Поисковый запрос {0} должен отдавать не пустой список результатов")
     @Tags({@Tag("WEB"), @Tag("SMOKE")})
-    @DisplayName("Проверка отправки запроса по профессиям и выдача непустого рещультата")
+    @DisplayName("Проверка отправки запроса по профессиям и выдача непустого результата")
     void searchProfessionQueryShouldNotHasEmptyResultTest(String query) {
         $("[name=search]").setValue(query).pressEnter();
         $$(".card-list").shouldBe(sizeGreaterThan(0));
